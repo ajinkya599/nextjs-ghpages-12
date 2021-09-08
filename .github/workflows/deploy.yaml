@@ -38,8 +38,10 @@ jobs:
             github.repos.createPagesSite({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              source: '/',
-              "source.branch": 'gh-pages'
+              source: {
+                branch: 'gh-pages',
+                path: '/'
+              }
             })
             
       - name: Website URL
