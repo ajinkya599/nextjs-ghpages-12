@@ -36,10 +36,10 @@ jobs:
         with:
           script: |
             github.repos.createPagesSite({
-              '${{ github.repository_owner }}',
-              '${{github.event.repository.name }}',
-              '/',
-              'gh-pages'
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              source: '/',
+              source.branch: 'gh-pages'
             })
             
       - name: Website URL
